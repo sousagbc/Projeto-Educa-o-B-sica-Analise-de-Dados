@@ -83,20 +83,6 @@ Matplotlib
 Seaborn
 Plotly
 
-🚀 Como Executar o Projeto
-
-# Clonar o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
-
-# Acessar a pasta
-cd seu-repositorio
-
-# Instalar dependências
-pip install -r requirements.txt
-
-# Executar o projeto
-python main.py
-
 ⚠️ Observações
 Os dados são simulados, portanto os resultados têm caráter educacional
 A metodologia aplicada segue padrões reais de análise de dados

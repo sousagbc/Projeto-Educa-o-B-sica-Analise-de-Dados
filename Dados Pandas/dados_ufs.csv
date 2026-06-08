@@ -1,0 +1,82 @@
+﻿regiao,uf,municipio,cod_municipio,total_matriculas,matriculas_federal,matriculas_estadual,matriculas_municipal,matriculas_privada,ano,fonte,pct_publica,pct_privada
+Norte,Rondônia,, ,391467,4181,173892,128748,39492,2022,INEP — Sinopse Estatística da Educação Básica,78.4,10.1
+Norte,Acre,, ,254695,2998,104815,60552,12704,2022,INEP — Sinopse Estatística da Educação Básica,66.1,5.0
+Norte,Amazonas,, ,1148756,9414,384003,398404,88006,2022,INEP — Sinopse Estatística da Educação Básica,68.9,7.7
+Norte,Roraima,, ,176301,1741,53753,61728,15430,2022,INEP — Sinopse Estatística da Educação Básica,66.5,8.8
+Norte,Pará,, ,2250207,13872,478981,865522,233831,2022,INEP — Sinopse Estatística da Educação Básica,60.4,10.4
+Norte,Amapá,, ,209101,2520,85108,60583,19936,2022,INEP — Sinopse Estatística da Educação Básica,70.9,9.5
+Norte,Tocantins,, ,382227,3028,130111,169692,36051,2022,INEP — Sinopse Estatística da Educação Básica,79.2,9.4
+Nordeste,Maranhão,, ,1947649,11671,254675,797783,211924,2022,INEP — Sinopse Estatística da Educação Básica,54.6,10.9
+Nordeste,Piauí,, ,883834,11559,215469,364537,105646,2022,INEP — Sinopse Estatística da Educação Básica,66.9,12.0
+Nordeste,Ceará,, ,2140122,11486,377383,994776,374194,2022,INEP — Sinopse Estatística da Educação Básica,64.7,17.5
+Nordeste,Rio Grande do Norte,, ,802751,17957,199330,300352,169996,2022,INEP — Sinopse Estatística da Educação Básica,64.5,21.2
+Nordeste,Paraíba,, ,967833,12065,209465,414308,181411,2022,INEP — Sinopse Estatística da Educação Básica,65.7,18.7
+Nordeste,Pernambuco,, ,2159399,13626,506622,820082,480929,2022,INEP — Sinopse Estatística da Educação Básica,62.1,22.3
+Nordeste,Alagoas,, ,884262,11380,165690,361762,130173,2022,INEP — Sinopse Estatística da Educação Básica,60.9,14.7
+Nordeste,Sergipe,, ,537182,3364,149580,165969,111924,2022,INEP — Sinopse Estatística da Educação Básica,59.4,20.8
+Nordeste,Bahia,, ,3444550,16928,670411,1437006,535934,2022,INEP — Sinopse Estatística da Educação Básica,61.7,15.6
+Sudeste,Minas Gerais,, ,4310816,35395,1673496,1638114,742006,2022,INEP — Sinopse Estatística da Educação Básica,77.6,17.2
+Sudeste,Espírito Santo,, ,873913,10737,217023,466618,110386,2022,INEP — Sinopse Estatística da Educação Básica,79.5,12.6
+Sudeste,Rio de Janeiro,, ,3503285,38067,707431,1570065,1034068,2022,INEP — Sinopse Estatística da Educação Básica,66.1,29.5
+Sudeste,São Paulo,, ,10029069,17745,3648576,3781306,2415445,2022,INEP — Sinopse Estatística da Educação Básica,74.3,24.1
+Sul,Paraná,, ,2482415,14350,909620,1003347,441212,2022,INEP — Sinopse Estatística da Educação Básica,77.6,17.8
+Sul,Santa Catarina,, ,1692795,18178,507839,771289,292733,2022,INEP — Sinopse Estatística da Educação Básica,76.6,17.3
+Sul,Rio Grande do Sul,, ,2266494,21845,732747,893005,457895,2022,INEP — Sinopse Estatística da Educação Básica,72.7,20.2
+Centro-Oeste,Mato Grosso do Sul,, ,667842,5870,180796,325259,98205,2022,INEP — Sinopse Estatística da Educação Básica,76.7,14.7
+Centro-Oeste,Mato Grosso,, ,892534,6595,321339,354985,104892,2022,INEP — Sinopse Estatística da Educação Básica,76.5,11.8
+Centro-Oeste,Goiás,, ,1438877,7615,465970,649803,268523,2022,INEP — Sinopse Estatística da Educação Básica,78.1,18.7
+Centro-Oeste,Distrito Federal,, ,643698,7305,416877,0,194094,2022,INEP — Sinopse Estatística da Educação Básica,65.9,30.2
+Norte,Rondônia,, ,388322,4118,167567,130983,41333,2023,INEP — Sinopse Estatística da Educação Básica,77.9,10.6
+Norte,Acre,, ,253918,2778,101292,61553,14848,2023,INEP — Sinopse Estatística da Educação Básica,65.2,5.8
+Norte,Amazonas,, ,1149598,9559,375318,404983,95902,2023,INEP — Sinopse Estatística da Educação Básica,68.7,8.3
+Norte,Roraima,, ,180965,2279,52852,66586,15572,2023,INEP — Sinopse Estatística da Educação Básica,67.3,8.6
+Norte,Pará,, ,2204948,14327,411928,870448,242711,2023,INEP — Sinopse Estatística da Educação Básica,58.8,11.0
+Norte,Amapá,, ,213345,2205,84730,63009,22832,2023,INEP — Sinopse Estatística da Educação Básica,70.3,10.7
+Norte,Tocantins,, ,385207,3036,126822,175992,38280,2023,INEP — Sinopse Estatística da Educação Básica,79.4,9.9
+Nordeste,Maranhão,, ,1920497,12358,254772,782642,216576,2023,INEP — Sinopse Estatística da Educação Básica,54.7,11.3
+Nordeste,Piauí,, ,860073,12168,189089,363402,111377,2023,INEP — Sinopse Estatística da Educação Básica,65.7,12.9
+Nordeste,Ceará,, ,2136831,12531,366027,979166,398508,2023,INEP — Sinopse Estatística da Educação Básica,63.5,18.6
+Nordeste,Rio Grande do Norte,, ,796526,17581,190377,296586,176601,2023,INEP — Sinopse Estatística da Educação Básica,63.3,22.2
+Nordeste,Paraíba,, ,959178,11425,188993,421310,188686,2023,INEP — Sinopse Estatística da Educação Básica,64.8,19.7
+Nordeste,Pernambuco,, ,2149639,13041,487401,816247,503767,2023,INEP — Sinopse Estatística da Educação Básica,61.3,23.4
+Nordeste,Alagoas,, ,891409,10381,159608,367545,129885,2023,INEP — Sinopse Estatística da Educação Básica,60.3,14.6
+Nordeste,Sergipe,, ,530674,3335,141812,166933,114420,2023,INEP — Sinopse Estatística da Educação Básica,58.8,21.6
+Nordeste,Bahia,, ,3440528,18347,631457,1431813,566828,2023,INEP — Sinopse Estatística da Educação Básica,60.5,16.5
+Sudeste,Minas Gerais,, ,4310112,37281,1586798,1661575,811159,2023,INEP — Sinopse Estatística da Educação Básica,76.2,18.8
+Sudeste,Espírito Santo,, ,870274,10543,206041,468864,115318,2023,INEP — Sinopse Estatística da Educação Básica,78.8,13.3
+Sudeste,Rio de Janeiro,, ,3448019,34662,660785,1553156,1044852,2023,INEP — Sinopse Estatística da Educação Básica,65.2,30.3
+Sudeste,São Paulo,, ,10079302,18233,3603101,3789978,2500728,2023,INEP — Sinopse Estatística da Educação Básica,73.5,24.8
+Sul,Paraná,, ,2464010,11973,846894,1025490,468508,2023,INEP — Sinopse Estatística da Educação Básica,76.5,19.0
+Sul,Santa Catarina,, ,1726930,17452,502137,796698,305889,2023,INEP — Sinopse Estatística da Educação Básica,76.2,17.7
+Sul,Rio Grande do Sul,, ,2272051,21447,696415,897824,498293,2023,INEP — Sinopse Estatística da Educação Básica,71.1,21.9
+Centro-Oeste,Mato Grosso do Sul,, ,677170,6272,173355,336119,104776,2023,INEP — Sinopse Estatística da Educação Básica,76.2,15.5
+Centro-Oeste,Mato Grosso,, ,894290,8076,290083,379095,117488,2023,INEP — Sinopse Estatística da Educação Básica,75.7,13.1
+Centro-Oeste,Goiás,, ,1462739,7047,459194,666053,284433,2023,INEP — Sinopse Estatística da Educação Básica,77.4,19.4
+Centro-Oeste,Distrito Federal,, ,638077,6823,409231,0,196916,2023,INEP — Sinopse Estatística da Educação Básica,65.2,30.9
+Norte,Rondônia,, ,383849,4353,161248,133047,41439,2024,INEP — Sinopse Estatística da Educação Básica,77.8,10.8
+Norte,Acre,, ,248340,2886,99996,60611,14062,2024,INEP — Sinopse Estatística da Educação Básica,65.8,5.7
+Norte,Amazonas,, ,1153833,9549,375958,410736,97865,2024,INEP — Sinopse Estatística da Educação Básica,69.0,8.5
+Norte,Roraima,, ,185657,1713,54963,69364,14781,2024,INEP — Sinopse Estatística da Educação Básica,67.9,8.0
+Norte,Pará,, ,2206871,13821,429571,865607,239975,2024,INEP — Sinopse Estatística da Educação Básica,59.3,10.9
+Norte,Amapá,, ,213712,2052,86883,63737,22658,2024,INEP — Sinopse Estatística da Educação Básica,71.4,10.6
+Norte,Tocantins,, ,385307,3030,121528,178384,42742,2024,INEP — Sinopse Estatística da Educação Básica,78.6,11.1
+Nordeste,Maranhão,, ,1850984,12501,260051,751386,217358,2024,INEP — Sinopse Estatística da Educação Básica,55.3,11.7
+Nordeste,Piauí,, ,829549,13239,170218,360509,110648,2024,INEP — Sinopse Estatística da Educação Básica,65.6,13.3
+Nordeste,Ceará,, ,2132934,13261,369548,968882,407043,2024,INEP — Sinopse Estatística da Educação Básica,63.4,19.1
+Nordeste,Rio Grande do Norte,, ,783190,17010,187459,290396,174585,2024,INEP — Sinopse Estatística da Educação Básica,63.2,22.3
+Nordeste,Paraíba,, ,949125,11451,187963,419258,190210,2024,INEP — Sinopse Estatística da Educação Básica,65.2,20.0
+Nordeste,Pernambuco,, ,2121954,13004,461662,815130,507475,2024,INEP — Sinopse Estatística da Educação Básica,60.8,23.9
+Nordeste,Alagoas,, ,863732,9872,161393,359270,133198,2024,INEP — Sinopse Estatística da Educação Básica,61.4,15.4
+Nordeste,Sergipe,, ,526786,3470,139465,167737,115812,2024,INEP — Sinopse Estatística da Educação Básica,59.0,22.0
+Nordeste,Bahia,, ,3416549,19511,636462,1404045,578790,2024,INEP — Sinopse Estatística da Educação Básica,60.3,16.9
+Sudeste,Minas Gerais,, ,4294157,37132,1567342,1671416,807506,2024,INEP — Sinopse Estatística da Educação Básica,76.3,18.8
+Sudeste,Espírito Santo,, ,869379,10708,193182,478965,118162,2024,INEP — Sinopse Estatística da Educação Básica,78.5,13.6
+Sudeste,Rio de Janeiro,, ,3421235,34817,642262,1541430,1047972,2024,INEP — Sinopse Estatística da Educação Básica,64.8,30.6
+Sudeste,São Paulo,, ,9998443,19122,3515300,3774109,2527458,2024,INEP — Sinopse Estatística da Educação Básica,73.1,25.3
+Sul,Paraná,, ,2498963,11168,866216,1036327,474511,2024,INEP — Sinopse Estatística da Educação Básica,76.6,19.0
+Sul,Santa Catarina,, ,1768874,17959,508899,811906,323794,2024,INEP — Sinopse Estatística da Educação Básica,75.7,18.3
+Sul,Rio Grande do Sul,, ,2227679,22672,655143,901372,494244,2024,INEP — Sinopse Estatística da Educação Básica,70.9,22.2
+Centro-Oeste,Mato Grosso do Sul,, ,679596,6448,173691,338948,104295,2024,INEP — Sinopse Estatística da Educação Básica,76.4,15.3
+Centro-Oeste,Mato Grosso,, ,898482,8367,280541,394595,119285,2024,INEP — Sinopse Estatística da Educação Básica,76.1,13.3
+Centro-Oeste,Goiás,, ,1550149,7084,531590,671339,291132,2024,INEP — Sinopse Estatística da Educação Básica,78.1,18.8
+Centro-Oeste,Distrito Federal,, ,629593,7222,395502,0,201499,2024,INEP — Sinopse Estatística da Educação Básica,64.0,32.0

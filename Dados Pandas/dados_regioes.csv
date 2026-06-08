@@ -1,0 +1,16 @@
+﻿regiao,uf,municipio,cod_municipio,total_matriculas,matriculas_federal,matriculas_estadual,matriculas_municipal,matriculas_privada,ano,fonte,pct_publica,pct_privada
+Norte,,, ,4812754,37754,1410663,1745229,445450,2022,INEP — Sinopse Estatística da Educação Básica,66.4,9.3
+Nordeste,,, ,13767582,110036,2748625,5656575,2302131,2022,INEP — Sinopse Estatística da Educação Básica,61.8,16.7
+Sudeste,,, ,18717083,101944,6246526,7456103,4301905,2022,INEP — Sinopse Estatística da Educação Básica,73.8,23.0
+Sul,,, ,6441704,54373,2150206,2667641,1191840,2022,INEP — Sinopse Estatística da Educação Básica,75.6,18.5
+Centro-Oeste,,, ,3642951,27385,1384982,1330047,665714,2022,INEP — Sinopse Estatística da Educação Básica,75.3,18.3
+Norte,,, ,4776303,38302,1320509,1773554,471478,2023,INEP — Sinopse Estatística da Educação Básica,65.6,9.9
+Nordeste,,, ,13685355,111167,2609536,5625644,2406648,2023,INEP — Sinopse Estatística da Educação Básica,61.0,17.6
+Sudeste,,, ,18707707,100719,6056725,7473573,4472057,2023,INEP — Sinopse Estatística da Educação Básica,72.9,23.9
+Sul,,, ,6462991,50872,2045446,2720012,1272690,2023,INEP — Sinopse Estatística da Educação Básica,74.5,19.7
+Centro-Oeste,,, ,3672276,28218,1331863,1381267,703613,2023,INEP — Sinopse Estatística da Educação Básica,74.6,19.2
+Norte,,, ,4777569,37404,1330147,1781486,473522,2024,INEP — Sinopse Estatística da Educação Básica,65.9,9.9
+Nordeste,,, ,13474803,113319,2574221,5536613,2435119,2024,INEP — Sinopse Estatística da Educação Básica,61.0,18.1
+Sudeste,,, ,18583214,101779,5918086,7465920,4501098,2024,INEP — Sinopse Estatística da Educação Básica,72.6,24.2
+Sul,,, ,6495516,51799,2030258,2749605,1292549,2024,INEP — Sinopse Estatística da Educação Básica,74.4,19.9
+Centro-Oeste,,, ,3757820,29121,1381324,1404882,716211,2024,INEP — Sinopse Estatística da Educação Básica,74.9,19.1

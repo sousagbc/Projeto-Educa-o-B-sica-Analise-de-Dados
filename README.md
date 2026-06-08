@@ -83,7 +83,13 @@ Plotly
 Os dados são simulados, portanto os resultados têm caráter educacional. A metodologia aplicada segue padrões reais de análise de dados.
 
 👨‍💻 Autor(es)
-Projeto desenvolvido para a disciplina de Análise de Dados e BI.
+
+Gabriel Sousa 
+Caio Vinicius 
+Ricksson Medeiros 
+Lielson Marques
+
+Projeto desenvolvido para a disciplina Tópicos Avançados em Computação com base em Análise de Dados e BI.
 
 📌 Conclusão
 Os resultados indicam uma relação significativa entre fatores socioeconômicos e desempenho escolar, reforçando a importância de políticas públicas voltadas à redução da desigualdade.

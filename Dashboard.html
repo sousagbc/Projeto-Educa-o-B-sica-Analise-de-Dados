@@ -4,27 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Educação Básica no Brasil — Dashboard INEP</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #f5f4f1;
-      --surface: #ffffff;
-      --surface2: #f0efe9;
-      --border: rgba(0,0,0,0.09);
-      --text: #1a1a18;
-      --text2: #5c5c58;
-      --text3: #9a9a92;
-      --blue: #1557a0;
-      --blue-light: #e6f0fb;
-      --green: #1e6e38;
-      --green-light: #e6f4eb;
-      --red: #b52222;
-      --red-light: #fbeaea;
-      --amber: #7a4d00;
-      --amber-light: #fff4e0;
-      --r: 10px;
-      --rlg: 14px;
+      --bg: #f5f4f1; --surface: #ffffff; --surface2: #f0efe9;
+      --border: rgba(0,0,0,0.09); --text: #1a1a18; --text2: #5c5c58; --text3: #9a9a92;
+      --blue: #1557a0; --blue-light: #e6f0fb; --green: #1e6e38; --green-light: #e6f4eb;
+      --red: #b52222; --red-light: #fbeaea; --amber: #7a4d00; --amber-light: #fff4e0;
+      --r: 10px; --rlg: 14px;
     }
     body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
@@ -69,9 +57,8 @@
     .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--rlg); padding: 1.4rem; }
     .card-t { font-size: 0.88rem; font-weight: 600; margin-bottom: 3px; }
     .card-s { font-size: 0.78rem; color: var(--text2); margin-bottom: 1.1rem; line-height: 1.5; }
-    .cw { position: relative; width: 100%; height: 240px; }
-    .cw.sm { height: 175px; }
-    .cw.lg { height: 290px; }
+    .cw { width: 100%; height: 260px; }
+    .cw.lg { height: 300px; }
 
     .alert { border-radius: 0 var(--r) var(--r) 0; padding: 0.9rem 1.1rem; margin-bottom: 1rem; border-left: 3px solid; }
     .alert.blu { background: var(--blue-light); border-color: var(--blue); }
@@ -94,12 +81,6 @@
     .prop-body { font-size: 0.79rem; color: var(--text2); line-height: 1.65; }
     .prop-stat { display: inline-block; background: var(--surface2); border-radius: var(--r); padding: 5px 11px; font-size: 0.73rem; color: var(--text2); margin-top: 9px; }
     .prop-stat strong { color: var(--text); }
-
-    .leg { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
-    .leg-i { display: flex; align-items: center; gap: 5px; font-size: 0.73rem; color: var(--text2); }
-    .leg-d { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
-
-    .fonte { font-size: 0.68rem; color: var(--text3); margin-top: 6px; }
 
     .bar-cmp { margin-bottom: 1.4rem; }
     .bc-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
@@ -144,128 +125,65 @@
 
 <main>
 
-<!-- ===== VISÃO GERAL ===== -->
+<!-- VISÃO GERAL -->
 <div id="visao" class="sec on">
   <div class="sec-hd">
     <h2>Panorama nacional — 2024</h2>
     <p>Dados reais do Censo Escolar INEP. O Brasil tem 47 milhões de alunos matriculados na educação básica, com desigualdades expressivas entre regiões.</p>
   </div>
-
   <div class="kpis">
-    <div class="kpi blu">
-      <div class="kpi-lbl">Total de matrículas</div>
-      <div class="kpi-val">47,1 mi</div>
-      <div class="kpi-sub">Educação básica 2024</div>
-      <span class="badge b-blu">INEP 2024</span>
-    </div>
-    <div class="kpi red">
-      <div class="kpi-lbl">Taxa de abandono</div>
-      <div class="kpi-val">4,66%</div>
-      <div class="kpi-sub">Média nacional 2024</div>
-      <span class="badge b-red">Norte: 7,6%</span>
-    </div>
-    <div class="kpi grn">
-      <div class="kpi-lbl">Taxa de aprovação</div>
-      <div class="kpi-val">88,7%</div>
-      <div class="kpi-sub">Média nacional 2024</div>
-      <span class="badge b-grn">Sul: 91,8%</span>
-    </div>
-    <div class="kpi amb">
-      <div class="kpi-lbl">Rede pública</div>
-      <div class="kpi-val">80,0%</div>
-      <div class="kpi-sub">Federal + Estadual + Municipal</div>
-      <span class="badge b-amb">Municipal: 40,2%</span>
-    </div>
-    <div class="kpi red">
-      <div class="kpi-lbl">Taxa de reprovação</div>
-      <div class="kpi-val">6,63%</div>
-      <div class="kpi-sub">Média nacional 2024</div>
-      <span class="badge b-red">Norte: 7,7%</span>
-    </div>
+    <div class="kpi blu"><div class="kpi-lbl">Total de matrículas</div><div class="kpi-val">47,1 mi</div><div class="kpi-sub">Educação básica 2024</div><span class="badge b-blu">INEP 2024</span></div>
+    <div class="kpi red"><div class="kpi-lbl">Taxa de abandono</div><div class="kpi-val">4,66%</div><div class="kpi-sub">Média nacional 2024</div><span class="badge b-red">Norte: 7,6%</span></div>
+    <div class="kpi grn"><div class="kpi-lbl">Taxa de aprovação</div><div class="kpi-val">88,7%</div><div class="kpi-sub">Média nacional 2024</div><span class="badge b-grn">Sul: 91,8%</span></div>
+    <div class="kpi amb"><div class="kpi-lbl">Rede pública</div><div class="kpi-val">80,0%</div><div class="kpi-sub">Federal + Estadual + Municipal</div><span class="badge b-amb">Municipal: 40,2%</span></div>
+    <div class="kpi red"><div class="kpi-lbl">Taxa de reprovação</div><div class="kpi-val">6,63%</div><div class="kpi-sub">Média nacional 2024</div><span class="badge b-red">Norte: 7,7%</span></div>
   </div>
-
   <div class="g2">
     <div class="card">
       <div class="card-t">Matrículas por região — 2024</div>
-      <div class="card-s">O Sudeste concentra 39% de todas as matrículas do país. Norte e Centro-Oeste somam apenas 18%.</div>
-      <div class="cw">
-        <canvas id="cMatReg" role="img" aria-label="Matrículas por região 2024">Norte 4,7mi | Nordeste 13,5mi | Sudeste 18,6mi | Sul 6,5mi | Centro-Oeste 3,8mi</canvas>
-      </div>
-      <p class="fonte">Fonte: INEP — Sinopse Estatística da Educação Básica 2024</p>
+      <div class="card-s">O Sudeste concentra 39% de todas as matrículas. Norte e Centro-Oeste somam apenas 18%.</div>
+      <div class="cw" id="cMatReg"></div>
     </div>
     <div class="card">
       <div class="card-t">Distribuição por rede — nacional 2024</div>
       <div class="card-s">A rede municipal é a maior do país, responsável por 40% das matrículas, seguida pela estadual (28%).</div>
-      <div class="cw">
-        <canvas id="cRede" role="img" aria-label="Distribuição por rede 2024">Municipal 40,2% | Estadual 28,1% | Privada 20,0% | Federal 0,7%</canvas>
-      </div>
-      <p class="fonte">Fonte: INEP — Sinopse Estatística da Educação Básica 2024</p>
+      <div class="cw" id="cRede"></div>
     </div>
   </div>
-
   <div class="alert blu">
     <div class="alert-t">A desigualdade regional é estrutural — não pontual</div>
-    <div class="alert-b">A diferença de 5,1 pontos percentuais na taxa de abandono entre Norte (7,6%) e Sul (2,5%) não é aleatória. Ela acompanha diretamente indicadores de renda, conectividade e infraestrutura escolar. Regiões com maior proporção de escolas municipais e menor presença federal concentram os piores indicadores.</div>
+    <div class="alert-b">A diferença de 5,1 pontos percentuais na taxa de abandono entre Norte (7,6%) e Sul (2,5%) acompanha diretamente indicadores de renda, conectividade e infraestrutura escolar.</div>
   </div>
 </div>
 
-<!-- ===== MATRÍCULAS ===== -->
+<!-- MATRÍCULAS -->
 <div id="matriculas" class="sec">
   <div class="sec-hd">
     <h2>Análise de matrículas (2022–2024)</h2>
     <p>Evolução e distribuição das matrículas por rede de ensino e região, com base nos dados reais do Censo Escolar INEP.</p>
   </div>
-
   <div class="kpis">
-    <div class="kpi blu">
-      <div class="kpi-lbl">Total 2022</div>
-      <div class="kpi-val">47,4 mi</div>
-      <div class="kpi-sub">Pico do período</div>
-    </div>
-    <div class="kpi blu">
-      <div class="kpi-lbl">Total 2023</div>
-      <div class="kpi-val">47,3 mi</div>
-      <div class="kpi-sub">-77 mil matrículas</div>
-    </div>
-    <div class="kpi blu">
-      <div class="kpi-lbl">Total 2024</div>
-      <div class="kpi-val">47,1 mi</div>
-      <div class="kpi-sub">-215 mil em 2 anos</div>
-    </div>
-    <div class="kpi amb">
-      <div class="kpi-lbl">Privada 2022</div>
-      <div class="kpi-val">18,8%</div>
-      <div class="kpi-sub">8,9 milhões de alunos</div>
-    </div>
-    <div class="kpi red">
-      <div class="kpi-lbl">Privada 2024</div>
-      <div class="kpi-val">20,0%</div>
-      <div class="kpi-sub">+511 mil em 2 anos</div>
-    </div>
+    <div class="kpi blu"><div class="kpi-lbl">Total 2022</div><div class="kpi-val">47,4 mi</div><div class="kpi-sub">Pico do período</div></div>
+    <div class="kpi blu"><div class="kpi-lbl">Total 2023</div><div class="kpi-val">47,3 mi</div><div class="kpi-sub">-77 mil matrículas</div></div>
+    <div class="kpi blu"><div class="kpi-lbl">Total 2024</div><div class="kpi-val">47,1 mi</div><div class="kpi-sub">-215 mil em 2 anos</div></div>
+    <div class="kpi amb"><div class="kpi-lbl">Privada 2022</div><div class="kpi-val">18,8%</div><div class="kpi-sub">8,9 milhões de alunos</div></div>
+    <div class="kpi red"><div class="kpi-lbl">Privada 2024</div><div class="kpi-val">20,0%</div><div class="kpi-sub">+511 mil em 2 anos</div></div>
   </div>
-
   <div class="g2">
     <div class="card">
       <div class="card-t">Evolução total de matrículas (2022–2024)</div>
       <div class="card-s">Queda gradual no total, com crescimento consistente da rede privada (+6,3% no período).</div>
-      <div class="cw">
-        <canvas id="cEvolucao" role="img" aria-label="Evolução de matrículas 2022 a 2024">2022: 47,4mi | 2023: 47,3mi | 2024: 47,1mi</canvas>
-      </div>
-      <p class="fonte">Fonte: INEP — Sinopse Estatística da Educação Básica</p>
+      <div class="cw" id="cEvolucao"></div>
     </div>
     <div class="card">
       <div class="card-t">Matrículas por rede — evolução 2022–2024</div>
       <div class="card-s">Municipal e estadual perdem alunos; privada e federal crescem levemente.</div>
-      <div class="cw">
-        <canvas id="cRedeEvo" role="img" aria-label="Matrículas por rede 2022 a 2024">Evolução federal, estadual, municipal e privada.</canvas>
-      </div>
-      <p class="fonte">Fonte: INEP — Sinopse Estatística da Educação Básica</p>
+      <div class="cw" id="cRedeEvo"></div>
     </div>
   </div>
-
   <div class="card" style="margin-bottom:1.5rem">
     <div class="card-t">% rede pública × privada por região — 2024</div>
-    <div class="card-s">Nordeste tem a maior dependência da rede pública. Sudeste tem a maior participação privada (23,9% no Rio de Janeiro chega a 30,6%).</div>
+    <div class="card-s">Nordeste tem a maior dependência da rede pública. Sudeste tem a maior participação privada.</div>
     <div class="bar-cmp">
       <div class="bc-row"><div class="bc-lbl">Norte</div><div class="bc-bg"><div class="bc-fill" style="width:90.1%;background:#1557a0;"><span class="bc-val">90,1% pública</span></div></div><span class="bc-ext">9,9% privada</span></div>
       <div class="bc-row"><div class="bc-lbl">Nordeste</div><div class="bc-bg"><div class="bc-fill" style="width:82.4%;background:#1557a0;"><span class="bc-val">82,4% pública</span></div></div><span class="bc-ext">17,6% privada</span></div>
@@ -273,194 +191,117 @@
       <div class="bc-row"><div class="bc-lbl">Sul</div><div class="bc-bg"><div class="bc-fill" style="width:80.3%;background:#1557a0;"><span class="bc-val">80,3% pública</span></div></div><span class="bc-ext">19,7% privada</span></div>
       <div class="bc-row"><div class="bc-lbl">Sudeste</div><div class="bc-bg"><div class="bc-fill" style="width:76.1%;background:#1557a0;"><span class="bc-val">76,1% pública</span></div></div><span class="bc-ext">23,9% privada</span></div>
     </div>
-    <p class="fonte">Fonte: INEP — Sinopse Estatística da Educação Básica 2024</p>
   </div>
-
   <div class="alert amb">
     <div class="alert-t">Tendência: migração para a rede privada</div>
-    <div class="alert-b">Em dois anos, a rede privada ganhou 511 mil matrículas (+6,3%) enquanto o total nacional caiu 293 mil. Esse movimento concentra alunos mais vulneráveis nas redes pública municipal e estadual — que recebem menos investimento por aluno —, aprofundando a desigualdade de qualidade.</div>
+    <div class="alert-b">Em dois anos, a rede privada ganhou 511 mil matrículas (+6,3%) enquanto o total nacional caiu 293 mil, concentrando alunos mais vulneráveis nas redes públicas.</div>
   </div>
 </div>
 
-<!-- ===== ABANDONO ===== -->
+<!-- ABANDONO -->
 <div id="abandono" class="sec">
   <div class="sec-hd">
     <h2>Taxa de abandono escolar</h2>
     <p>Percentual de alunos que abandonam a escola antes de concluir o ano letivo, por região, com evolução 2022–2024.</p>
   </div>
-
   <div class="kpis">
-    <div class="kpi red">
-      <div class="kpi-lbl">Norte — 2024</div>
-      <div class="kpi-val">7,6%</div>
-      <div class="kpi-sub">Maior taxa do país</div>
-      <span class="badge b-red">3× maior que o Sul</span>
-    </div>
-    <div class="kpi red">
-      <div class="kpi-lbl">Nordeste — 2024</div>
-      <div class="kpi-val">6,4%</div>
-      <div class="kpi-sub">2ª maior taxa</div>
-      <span class="badge b-red">↓ 0,6pp desde 2022</span>
-    </div>
-    <div class="kpi grn">
-      <div class="kpi-lbl">Sul — 2024</div>
-      <div class="kpi-val">2,5%</div>
-      <div class="kpi-sub">Menor taxa do país</div>
-      <span class="badge b-grn">Melhor desempenho</span>
-    </div>
-    <div class="kpi grn">
-      <div class="kpi-lbl">Nacional — 2024</div>
-      <div class="kpi-val">4,66%</div>
-      <div class="kpi-sub">↓ de 5,2% em 2022</div>
-      <span class="badge b-grn">Melhora de 0,54pp</span>
-    </div>
+    <div class="kpi red"><div class="kpi-lbl">Norte — 2024</div><div class="kpi-val">7,6%</div><div class="kpi-sub">Maior taxa do país</div><span class="badge b-red">3× maior que o Sul</span></div>
+    <div class="kpi red"><div class="kpi-lbl">Nordeste — 2024</div><div class="kpi-val">6,4%</div><div class="kpi-sub">2ª maior taxa</div><span class="badge b-red">↓ 0,6pp desde 2022</span></div>
+    <div class="kpi grn"><div class="kpi-lbl">Sul — 2024</div><div class="kpi-val">2,5%</div><div class="kpi-sub">Menor taxa do país</div><span class="badge b-grn">Melhor desempenho</span></div>
+    <div class="kpi grn"><div class="kpi-lbl">Nacional — 2024</div><div class="kpi-val">4,66%</div><div class="kpi-sub">↓ de 5,2% em 2022</div><span class="badge b-grn">Melhora de 0,54pp</span></div>
   </div>
-
   <div class="g2">
     <div class="card">
       <div class="card-t">Taxa de abandono por região — 2024</div>
       <div class="card-s">Norte e Nordeste concentram as maiores taxas, reflexo das desigualdades socioeconômicas.</div>
-      <div class="cw">
-        <canvas id="cAbReg24" role="img" aria-label="Taxa de abandono por região 2024">Norte 7,6% | Nordeste 6,4% | Centro-Oeste 3,9% | Sudeste 2,9% | Sul 2,5%</canvas>
-      </div>
-      <p class="fonte">Fonte: INEP — Taxas de Rendimento Escolar (Censo Escolar) 2024</p>
+      <div class="cw" id="cAbReg24"></div>
     </div>
     <div class="card">
       <div class="card-t">Evolução do abandono por região (2022–2024)</div>
       <div class="card-s">Todas as regiões melhoraram, mas Norte e Nordeste ainda têm taxas muito acima da média.</div>
-      <div class="cw">
-        <canvas id="cAbEvo" role="img" aria-label="Evolução da taxa de abandono por região 2022 a 2024">Queda gradual em todas as regiões de 2022 a 2024.</canvas>
-      </div>
-      <p class="fonte">Fonte: INEP — Taxas de Rendimento Escolar (Censo Escolar)</p>
+      <div class="cw" id="cAbEvo"></div>
     </div>
   </div>
-
   <div class="card" style="margin-bottom:1.5rem">
     <div class="card-t">Comparativo: abandono Norte × Sul — 2022 a 2024</div>
     <div class="card-s">A diferença entre as regiões extremas se mantém estável, indicando que a melhora é uniforme — não está reduzindo a desigualdade.</div>
-    <div class="cw lg">
-      <canvas id="cAbNordSul" role="img" aria-label="Abandono Norte versus Sul 2022 a 2024">Norte: 8,3%, 7,9%, 7,6% | Sul: 2,9%, 2,6%, 2,5%</canvas>
-    </div>
-    <p class="fonte">Fonte: INEP — Taxas de Rendimento Escolar (Censo Escolar)</p>
+    <div class="cw lg" id="cAbNordSul"></div>
   </div>
-
   <div class="alert red">
     <div class="alert-t">Alerta: diferença Norte × Sul praticamente não caiu em 3 anos</div>
-    <div class="alert-b">Em 2022, o Norte tinha 5,4 pontos percentuais a mais de abandono que o Sul. Em 2024, essa diferença é de 5,1pp. A melhora está acontecendo, mas de forma proporcional — a desigualdade regional permanece estruturalmente igual. Políticas uniformes não resolvem problemas desiguais.</div>
+    <div class="alert-b">Em 2022, o Norte tinha 5,4pp a mais de abandono que o Sul. Em 2024, essa diferença é de 5,1pp. A melhora está acontecendo, mas de forma proporcional — a desigualdade regional permanece estruturalmente igual.</div>
   </div>
 </div>
 
-<!-- ===== RENDIMENTO ===== -->
+<!-- RENDIMENTO -->
 <div id="rendimento" class="sec">
   <div class="sec-hd">
     <h2>Rendimento escolar — aprovação e reprovação</h2>
     <p>Análise das taxas de aprovação, reprovação e abandono por região, com evolução de 2022 a 2024.</p>
   </div>
-
   <div class="kpis">
-    <div class="kpi grn">
-      <div class="kpi-lbl">Aprovação nacional 2024</div>
-      <div class="kpi-val">88,7%</div>
-      <div class="kpi-sub">↑ de 87,6% em 2022</div>
-    </div>
-    <div class="kpi amb">
-      <div class="kpi-lbl">Reprovação nacional 2024</div>
-      <div class="kpi-val">6,63%</div>
-      <div class="kpi-sub">↓ de 7,2% em 2022</div>
-    </div>
-    <div class="kpi grn">
-      <div class="kpi-lbl">Melhor aprovação — 2024</div>
-      <div class="kpi-val">91,8%</div>
-      <div class="kpi-sub">Região Sul</div>
-      <span class="badge b-grn">Sul</span>
-    </div>
-    <div class="kpi red">
-      <div class="kpi-lbl">Pior aprovação — 2024</div>
-      <div class="kpi-val">84,7%</div>
-      <div class="kpi-sub">Região Norte</div>
-      <span class="badge b-red">Norte</span>
-    </div>
+    <div class="kpi grn"><div class="kpi-lbl">Aprovação nacional 2024</div><div class="kpi-val">88,7%</div><div class="kpi-sub">↑ de 87,6% em 2022</div></div>
+    <div class="kpi amb"><div class="kpi-lbl">Reprovação nacional 2024</div><div class="kpi-val">6,63%</div><div class="kpi-sub">↓ de 7,2% em 2022</div></div>
+    <div class="kpi grn"><div class="kpi-lbl">Melhor aprovação — 2024</div><div class="kpi-val">91,8%</div><div class="kpi-sub">Região Sul</div><span class="badge b-grn">Sul</span></div>
+    <div class="kpi red"><div class="kpi-lbl">Pior aprovação — 2024</div><div class="kpi-val">84,7%</div><div class="kpi-sub">Região Norte</div><span class="badge b-red">Norte</span></div>
   </div>
-
   <div class="g2">
     <div class="card">
       <div class="card-t">Taxa de aprovação por região — 2024</div>
-      <div class="card-s">Diferença de 7,1pp entre Norte (84,7%) e Sul (91,8%). Sul e Sudeste puxam a média nacional para cima.</div>
-      <div class="cw">
-        <canvas id="cAprovReg" role="img" aria-label="Taxa de aprovação por região 2024">Norte 84,7% | Nordeste 86,2% | Centro-Oeste 89,5% | Sudeste 91,1% | Sul 91,8%</canvas>
-      </div>
-      <p class="fonte">Fonte: INEP — Taxas de Rendimento Escolar 2024</p>
+      <div class="card-s">Diferença de 7,1pp entre Norte (84,7%) e Sul (91,8%).</div>
+      <div class="cw" id="cAprovReg"></div>
     </div>
     <div class="card">
       <div class="card-t">Comparativo completo por região — 2024</div>
-      <div class="card-s">Aprovação, reprovação e abandono somam 100% para cada região. Norte concentra o pior resultado nas três métricas.</div>
-      <div class="leg">
-        <div class="leg-i"><div class="leg-d" style="background:#1e6e38"></div>Aprovação</div>
-        <div class="leg-i"><div class="leg-d" style="background:#EF9F27"></div>Reprovação</div>
-        <div class="leg-i"><div class="leg-d" style="background:#b52222"></div>Abandono</div>
-      </div>
-      <div class="cw">
-        <canvas id="cCompleto" role="img" aria-label="Aprovação, reprovação e abandono por região 2024">Comparativo das três métricas por região.</canvas>
-      </div>
-      <p class="fonte">Fonte: INEP — Taxas de Rendimento Escolar 2024</p>
+      <div class="card-s">Aprovação, reprovação e abandono por região. Norte concentra o pior resultado nas três métricas.</div>
+      <div class="cw" id="cCompleto"></div>
     </div>
   </div>
-
   <div class="card" style="margin-bottom:1.5rem">
     <div class="card-t">Evolução nacional: aprovação, reprovação e abandono (2022–2024)</div>
-    <div class="card-s">Tendência positiva consistente nas três métricas — aprovação sobe, reprovação e abandono caem.</div>
-    <div class="cw lg">
-      <canvas id="cEvoNac" role="img" aria-label="Evolução nacional das taxas 2022 a 2024">Aprovação: 87,6%, 88,3%, 88,7%. Reprovação: 7,2%, 6,9%, 6,6%. Abandono: 5,2%, 4,8%, 4,7%.</canvas>
-    </div>
-    <p class="fonte">Fonte: INEP — Taxas de Rendimento Escolar (Censo Escolar)</p>
+    <div class="card-s">Tendência positiva consistente — aprovação sobe, reprovação e abandono caem.</div>
+    <div class="cw lg" id="cEvoNac"></div>
   </div>
-
   <div class="alert grn">
     <div class="alert-t">Melhora real, mas ainda insuficiente no Norte</div>
-    <div class="alert-b">O Brasil avançou de 87,6% para 88,7% de aprovação em dois anos (+1,1pp), o que representa cerca de 500 mil alunos a mais aprovados. No entanto, com 84,7% de aprovação, o Norte ainda tem mais de 700 mil alunos reprovados ou evadidos por ano — número que exige intervenção estrutural urgente.</div>
+    <div class="alert-b">O Brasil avançou de 87,6% para 88,7% de aprovação em dois anos (+1,1pp), representando ~500 mil alunos a mais aprovados. No entanto, o Norte ainda tem mais de 700 mil alunos reprovados ou evadidos por ano.</div>
   </div>
 </div>
 
-<!-- ===== PROPOSTAS ===== -->
+<!-- PROPOSTAS -->
 <div id="propostas" class="sec">
   <div class="sec-hd">
     <h2>Propostas de solução</h2>
-    <p>Intervenções baseadas diretamente nos padrões identificados nos dados reais do INEP. Cada proposta ataca um fator de risco específico.</p>
+    <p>Intervenções baseadas diretamente nos padrões identificados nos dados reais do INEP.</p>
   </div>
-
   <div class="prop urg">
     <div class="prop-hd"><span class="prop-tag t-urg">Urgente</span><span class="prop-title">Reforço emergencial no Norte e Nordeste</span></div>
-    <div class="prop-body">Com abandono de 7,6% no Norte e 6,4% no Nordeste — respectivamente 3× e 2,5× maior que o Sul —, essas regiões precisam de programas específicos, não uniformes. A proposta é criar um Fundo de Equidade Educacional com repasse extra por aluno nessas regiões, condicionado a metas de redução de abandono. Estima-se que reduzir o abandono do Norte para o patamar do Centro-Oeste (3,9%) evitaria o abandono de ~170 mil alunos por ano.</div>
-    <div class="prop-stat">Base de dados: <strong>INEP 2024 — Norte: 7,6% × Sul: 2,5% de abandono</strong></div>
+    <div class="prop-body">Com abandono de 7,6% no Norte e 6,4% no Nordeste — 3× e 2,5× maior que o Sul —, a proposta é criar um Fundo de Equidade Educacional com repasse extra por aluno nessas regiões, condicionado a metas de redução de abandono. Estima-se que reduzir o abandono do Norte ao patamar do Centro-Oeste (3,9%) evitaria o abandono de ~170 mil alunos por ano.</div>
+    <div class="prop-stat">Base: <strong>Norte: 7,6% × Sul: 2,5% de abandono (INEP 2024)</strong></div>
   </div>
-
   <div class="prop urg">
     <div class="prop-hd"><span class="prop-tag t-urg">Urgente</span><span class="prop-title">Fortalecimento da rede municipal — a maior e mais vulnerável</span></div>
-    <div class="prop-body">Com 40,2% das matrículas (18,9 milhões de alunos), a rede municipal é a maior do país — e a que recebe menos investimento por aluno. Em regiões Norte e Nordeste, a dependência municipal é ainda maior (escolas estaduais menores). A proposta é aumentar o valor por aluno do FUNDEB especificamente para municípios com IDH abaixo da média regional, priorizando infraestrutura e formação de professores.</div>
-    <div class="prop-stat">Base de dados: <strong>Municipal = 40,2% das matrículas nacionais (18,9 milhões)</strong></div>
+    <div class="prop-body">Com 40,2% das matrículas (18,9 milhões de alunos), a rede municipal é a maior do país e a que recebe menos investimento por aluno. A proposta é aumentar o valor por aluno do FUNDEB para municípios com IDH abaixo da média regional, priorizando infraestrutura e formação de professores.</div>
+    <div class="prop-stat">Base: <strong>Municipal = 40,2% das matrículas nacionais (18,9 milhões)</strong></div>
   </div>
-
   <div class="prop med">
     <div class="prop-hd"><span class="prop-tag t-med">Médio prazo</span><span class="prop-title">Programa de permanência escolar — bolsa vinculada à frequência</span></div>
-    <div class="prop-body">O abandono no Norte caiu apenas 0,7pp em dois anos (2022–2024), enquanto o Sul caiu 0,4pp — taxas similares de melhora, mas pontos de partida muito distintos. Para acelerar a redução nas regiões críticas, um auxílio financeiro condicionado à frequência mínima de 85% elimina a barreira econômica que força adolescentes a deixar a escola para trabalhar. Modelo baseado no Bolsa Escola, com foco no ensino médio.</div>
+    <div class="prop-body">Um auxílio financeiro condicionado à frequência mínima de 85% elimina a barreira econômica que força adolescentes a deixar a escola para trabalhar. Modelo baseado no Bolsa Escola, com foco no ensino médio nas regiões críticas.</div>
     <div class="prop-stat">Meta: <strong>reduzir abandono do Norte de 7,6% para abaixo de 5% até 2027</strong></div>
   </div>
-
   <div class="prop med">
-    <div class="prop-hd"><span class="prop-tag t-med">Médio prazo</span><span class="prop-title">Revisão do currículo e da avaliação nas redes com maior reprovação</span></div>
-    <div class="prop-body">O Norte tem reprovação de 7,7% — 35% acima da média nacional (6,63%). Reprovação repetida é o principal preditor de abandono. A proposta é implementar progressão continuada com recuperação paralela nas séries críticas (6º ano e 1ª série do ensino médio), onde a reprovação é mais concentrada. Países com baixa evasão usam avaliação formativa contínua, não avaliação terminal única.</div>
-    <div class="prop-stat">Base de dados: <strong>Norte: 7,7% de reprovação × Sul: 5,7%</strong></div>
+    <div class="prop-hd"><span class="prop-tag t-med">Médio prazo</span><span class="prop-title">Revisão da avaliação nas redes com maior reprovação</span></div>
+    <div class="prop-body">O Norte tem reprovação de 7,7% — 35% acima da média nacional (6,63%). Reprovação repetida é o principal preditor de abandono. A proposta é implementar progressão continuada com recuperação paralela nas séries críticas (6º ano e 1ª série do ensino médio).</div>
+    <div class="prop-stat">Base: <strong>Norte: 7,7% de reprovação × Sul: 5,7%</strong></div>
   </div>
-
   <div class="prop lng">
-    <div class="prop-hd"><span class="prop-tag t-lng">Longo prazo</span><span class="prop-title">Conter a migração para o privado sem perder qualidade no público</span></div>
-    <div class="prop-body">A rede privada cresceu 6,3% em dois anos (+511 mil alunos) enquanto o total nacional caiu. Isso concentra alunos mais vulneráveis nas redes públicas que têm menos recursos. A saída não é frear o privado, mas elevar o nível do público. Proposta: implementar o modelo de escolas de tempo integral nas redes municipais das regiões Norte e Nordeste, com alimentação, suporte pedagógico e atividades extracurriculares — reduzindo o incentivo à migração por necessidade.</div>
-    <div class="prop-stat">Tendência: <strong>privada passou de 18,8% (2022) para 20,0% (2024) das matrículas</strong></div>
+    <div class="prop-hd"><span class="prop-tag t-lng">Longo prazo</span><span class="prop-title">Conter a migração para o privado elevando a qualidade do público</span></div>
+    <div class="prop-body">A rede privada cresceu 6,3% em dois anos (+511 mil alunos). A saída não é frear o privado, mas elevar o nível do público. Proposta: implementar escolas de tempo integral nas redes municipais do Norte e Nordeste, com alimentação, suporte pedagógico e atividades extracurriculares.</div>
+    <div class="prop-stat">Tendência: <strong>privada passou de 18,8% (2022) para 20,0% (2024)</strong></div>
   </div>
-
   <div class="alert blu">
     <div class="alert-t">Conclusão: os dados apontam para um problema estrutural, não individual</div>
-    <div class="alert-b">Com 47 milhões de alunos e melhora consistente nas taxas nacionais, o Brasil vai na direção certa — mas lentamente e de forma desigual. A diferença Norte × Sul de 5,1pp de abandono manteve-se praticamente constante em 3 anos. Políticas uniformes não resolvem desigualdades estruturais. O foco deve ser em intervenções assimétricas: mais recursos onde os indicadores são piores, não distribuição igualitária de um recurso escasso.</div>
+    <div class="alert-b">Com 47 milhões de alunos e melhora consistente nas taxas nacionais, o Brasil vai na direção certa — mas lentamente e de forma desigual. A diferença Norte × Sul de 5,1pp de abandono manteve-se praticamente constante em 3 anos. Políticas uniformes não resolvem desigualdades estruturais.</div>
   </div>
 </div>
 
@@ -476,173 +317,153 @@
 function go(id) {
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.getAttribute('onclick').includes("'"+id+"'")));
   document.querySelectorAll('.sec').forEach(s => s.classList.toggle('on', s.id === id));
+  // Re-renderiza gráficos Plotly ao trocar aba
+  window.dispatchEvent(new Event('resize'));
 }
 
-const G = 'rgba(0,0,0,0.07)', T = '#888';
-const BASE = {
-  responsive: true, maintainAspectRatio: false,
-  plugins: { legend: { display: false } },
-  scales: {
-    x: { ticks: { color: T, font: { size: 11 } }, grid: { color: G } },
-    y: { ticks: { color: T, font: { size: 11 } }, grid: { color: G } }
-  }
+const CFG = { responsive: true, displayModeBar: false };
+const LAYOUT_BASE = {
+  paper_bgcolor: 'rgba(0,0,0,0)',
+  plot_bgcolor: 'rgba(0,0,0,0)',
+  font: { family: 'Segoe UI, system-ui, sans-serif', size: 11, color: '#5c5c58' },
+  margin: { t: 10, b: 50, l: 55, r: 15 }
 };
 
-function bar(id, labels, data, colors, yExtra={}) {
-  new Chart(document.getElementById(id), {
-    type: 'bar',
-    data: { labels, datasets: [{ data, backgroundColor: colors, borderRadius: 5, borderSkipped: false }] },
-    options: { ...BASE, scales: { x: BASE.scales.x, y: { ...BASE.scales.y, ...yExtra } } }
-  });
-}
+const REGIOES = ['Norte','Nordeste','Centro-Oeste','Sudeste','Sul'];
+const ANOS = ['2022','2023','2024'];
+const CORES_REG = ['#E24B4A','#EF9F27','#85B7EB','#378ADD','#1D9E75'];
 
-// VISÃO GERAL
-bar('cMatReg',
-  ['Norte', 'Nordeste', 'Sudeste', 'Sul', 'Centro-Oeste'],
-  [4777569, 13474803, 18583214, 6495516, 3757820],
-  ['#E24B4A','#EF9F27','#1557a0','#1D9E75','#85B7EB'],
-  { ticks: { ...BASE.scales.y.ticks, callback: v => (v/1000000).toFixed(1)+'mi' } }
-);
-
-new Chart(document.getElementById('cRede'), {
-  type: 'doughnut',
-  data: {
-    labels: ['Municipal (40,2%)', 'Estadual (28,1%)', 'Privada (20,0%)', 'Federal (0,7%)'],
-    datasets: [{ data: [18938506, 13234036, 9418499, 333422], backgroundColor: ['#1557a0','#378ADD','#EF9F27','#1D9E75'], borderWidth: 2, borderColor: '#fff' }]
-  },
-  options: { responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: true, position: 'right', labels: { font: { size: 11 }, color: T, boxWidth: 12, padding: 10 } } }
-  }
-});
-
-// MATRÍCULAS
-new Chart(document.getElementById('cEvolucao'), {
-  type: 'line',
-  data: {
-    labels: ['2022', '2023', '2024'],
-    datasets: [{
-      label: 'Total de matrículas',
-      data: [47382074, 47304632, 47088922],
-      borderColor: '#1557a0', backgroundColor: 'rgba(21,87,160,0.08)',
-      borderWidth: 2, pointRadius: 5, fill: true, tension: 0.3
-    }]
-  },
-  options: { ...BASE, scales: {
-    x: BASE.scales.x,
-    y: { ...BASE.scales.y, min: 46000000, ticks: { ...BASE.scales.y.ticks, callback: v => (v/1000000).toFixed(1)+'mi' } }
-  }}
-});
-
-new Chart(document.getElementById('cRedeEvo'), {
-  type: 'line',
-  data: {
-    labels: ['2022', '2023', '2024'],
-    datasets: [
-      { label: 'Municipal', data: [18855595, 18974050, 18938506], borderColor: '#1557a0', borderWidth: 2, pointRadius: 4, tension: 0.3, fill: false },
-      { label: 'Estadual',  data: [13941002, 13364079, 13234036], borderColor: '#EF9F27', borderWidth: 2, pointRadius: 4, tension: 0.3, fill: false },
-      { label: 'Privada',   data: [8907040,  9326486,  9418499],  borderColor: '#E24B4A', borderWidth: 2, pointRadius: 4, tension: 0.3, fill: false },
-      { label: 'Federal',   data: [331492,   329278,   333422],   borderColor: '#1D9E75', borderWidth: 2, pointRadius: 4, tension: 0.3, fill: false }
-    ]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: true, labels: { font: { size: 11 }, color: T, boxWidth: 12, padding: 10 } } },
-    scales: { x: BASE.scales.x, y: { ...BASE.scales.y, ticks: { ...BASE.scales.y.ticks, callback: v => (v/1000000).toFixed(1)+'mi' } } }
-  }
-});
-
-// ABANDONO
-bar('cAbReg24',
-  ['Norte','Nordeste','Centro-Oeste','Sudeste','Sul'],
-  [7.6, 6.4, 3.9, 2.9, 2.5],
-  ['#E24B4A','#E24B4A','#EF9F27','#1D9E75','#1D9E75'],
-  { min: 0, max: 10, ticks: { ...BASE.scales.y.ticks, callback: v => v.toFixed(1)+'%' } }
-);
-
-new Chart(document.getElementById('cAbEvo'), {
-  type: 'line',
-  data: {
-    labels: ['2022','2023','2024'],
-    datasets: [
-      { label: 'Norte',         data: [8.3, 7.9, 7.6], borderColor: '#E24B4A', borderWidth: 2, pointRadius: 4, tension: 0.3, fill: false },
-      { label: 'Nordeste',      data: [7.0, 6.6, 6.4], borderColor: '#EF9F27', borderWidth: 2, pointRadius: 4, tension: 0.3, fill: false },
-      { label: 'Centro-Oeste',  data: [4.5, 4.1, 3.9], borderColor: '#85B7EB', borderWidth: 2, pointRadius: 4, tension: 0.3, fill: false },
-      { label: 'Sudeste',       data: [3.3, 3.0, 2.9], borderColor: '#378ADD', borderWidth: 2, pointRadius: 4, tension: 0.3, fill: false },
-      { label: 'Sul',           data: [2.9, 2.6, 2.5], borderColor: '#1D9E75', borderWidth: 2, pointRadius: 4, tension: 0.3, fill: false }
-    ]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: true, labels: { font: { size: 11 }, color: T, boxWidth: 12, padding: 10 } } },
-    scales: { x: BASE.scales.x, y: { ...BASE.scales.y, min: 0, max: 10, ticks: { ...BASE.scales.y.ticks, callback: v => v.toFixed(1)+'%' } } }
-  }
-});
-
-new Chart(document.getElementById('cAbNordSul'), {
+// ── VISÃO GERAL ───────────────────────────────────────────────
+Plotly.newPlot('cMatReg', [{
   type: 'bar',
-  data: {
-    labels: ['2022','2023','2024'],
-    datasets: [
-      { label: 'Norte', data: [8.3, 7.9, 7.6], backgroundColor: '#E24B4A', borderRadius: 4 },
-      { label: 'Sul',   data: [2.9, 2.6, 2.5], backgroundColor: '#1D9E75', borderRadius: 4 }
-    ]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: true, labels: { font: { size: 11 }, color: T, boxWidth: 12, padding: 10 } } },
-    scales: { x: BASE.scales.x, y: { ...BASE.scales.y, min: 0, max: 10, ticks: { ...BASE.scales.y.ticks, callback: v => v.toFixed(1)+'%' } } }
-  }
-});
+  x: REGIOES,
+  y: [4777569, 13474803, 18583214, 6495516, 3757820],
+  marker: { color: CORES_REG, cornerradius: 4 },
+  text: ['4,8 mi','13,5 mi','18,6 mi','6,5 mi','3,8 mi'],
+  textposition: 'outside',
+  hovertemplate: '<b>%{x}</b><br>Matrículas: %{y:,.0f}<extra></extra>'
+}], {
+  ...LAYOUT_BASE,
+  yaxis: { gridcolor: '#e8e8e4', tickformat: '.2s', title: { text: 'Matrículas', font: { size: 10 } } }
+}, CFG);
 
-// RENDIMENTO
-bar('cAprovReg',
-  ['Norte','Nordeste','Centro-Oeste','Sudeste','Sul'],
-  [84.7, 86.2, 89.5, 91.1, 91.8],
-  ['#E24B4A','#EF9F27','#85B7EB','#378ADD','#1D9E75'],
-  { min: 78, max: 95, ticks: { ...BASE.scales.y.ticks, callback: v => v.toFixed(1)+'%' } }
-);
+Plotly.newPlot('cRede', [{
+  type: 'pie',
+  labels: ['Municipal (40,2%)', 'Estadual (28,1%)', 'Privada (20,0%)', 'Federal (0,7%)'],
+  values: [18938506, 13234036, 9418499, 333422],
+  marker: { colors: ['#1557a0','#378ADD','#EF9F27','#1D9E75'] },
+  textinfo: 'percent',
+  hovertemplate: '<b>%{label}</b><br>%{value:,.0f} alunos<extra></extra>',
+  hole: 0.35
+}], {
+  ...LAYOUT_BASE,
+  margin: { t: 10, b: 10, l: 10, r: 10 },
+  legend: { orientation: 'v', x: 1, y: 0.5, font: { size: 10 } },
+  showlegend: true
+}, CFG);
 
-new Chart(document.getElementById('cCompleto'), {
+// ── MATRÍCULAS ────────────────────────────────────────────────
+Plotly.newPlot('cEvolucao', [{
+  type: 'scatter', mode: 'lines+markers',
+  x: ANOS,
+  y: [47382074, 47304632, 47088922],
+  line: { color: '#1557a0', width: 2.5 },
+  marker: { size: 8, color: '#1557a0' },
+  fill: 'tozeroy', fillcolor: 'rgba(21,87,160,0.08)',
+  hovertemplate: '<b>%{x}</b><br>%{y:,.0f} matrículas<extra></extra>'
+}], {
+  ...LAYOUT_BASE,
+  yaxis: { gridcolor: '#e8e8e4', range: [46000000, 48000000], tickformat: '.3s' }
+}, CFG);
+
+Plotly.newPlot('cRedeEvo', [
+  { type:'scatter', mode:'lines+markers', name:'Municipal', x:ANOS, y:[18855595,18974050,18938506], line:{color:'#1557a0',width:2}, marker:{size:6} },
+  { type:'scatter', mode:'lines+markers', name:'Estadual',  x:ANOS, y:[13941002,13364079,13234036], line:{color:'#EF9F27',width:2}, marker:{size:6} },
+  { type:'scatter', mode:'lines+markers', name:'Privada',   x:ANOS, y:[8907040,9326486,9418499],   line:{color:'#E24B4A',width:2}, marker:{size:6} },
+  { type:'scatter', mode:'lines+markers', name:'Federal',   x:ANOS, y:[331492,329278,333422],       line:{color:'#1D9E75',width:2}, marker:{size:6} }
+], {
+  ...LAYOUT_BASE,
+  yaxis: { gridcolor: '#e8e8e4', tickformat: '.2s' },
+  legend: { orientation: 'h', y: -0.2, font: { size: 10 } },
+  showlegend: true
+}, CFG);
+
+// ── ABANDONO ──────────────────────────────────────────────────
+Plotly.newPlot('cAbReg24', [{
   type: 'bar',
-  data: {
-    labels: ['Norte','Nordeste','Centro-Oeste','Sudeste','Sul'],
-    datasets: [
-      { label: 'Aprovação',  data: [84.7, 86.2, 89.5, 91.1, 91.8], backgroundColor: '#1e6e38', borderRadius: 0 },
-      { label: 'Reprovação', data: [7.7,  7.4,  6.6,  6.0,  5.7],  backgroundColor: '#EF9F27', borderRadius: 0 },
-      { label: 'Abandono',   data: [7.6,  6.4,  3.9,  2.9,  2.5],  backgroundColor: '#b52222', borderRadius: 0 }
-    ]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: true, labels: { font: { size: 11 }, color: T, boxWidth: 12, padding: 10 } } },
-    scales: {
-      x: { ...BASE.scales.x, stacked: true },
-      y: { ...BASE.scales.y, stacked: true, max: 100, ticks: { ...BASE.scales.y.ticks, callback: v => v+'%' } }
-    }
-  }
-});
+  x: REGIOES,
+  y: [7.6, 6.4, 3.9, 2.9, 2.5],
+  marker: { color: ['#E24B4A','#E24B4A','#EF9F27','#1D9E75','#1D9E75'], cornerradius: 4 },
+  text: ['7,6%','6,4%','3,9%','2,9%','2,5%'],
+  textposition: 'outside',
+  hovertemplate: '<b>%{x}</b><br>Abandono: %{y}%<extra></extra>'
+}], {
+  ...LAYOUT_BASE,
+  yaxis: { gridcolor: '#e8e8e4', range: [0, 10], title: { text: 'Taxa (%)', font: { size: 10 } } }
+}, CFG);
 
-new Chart(document.getElementById('cEvoNac'), {
-  type: 'line',
-  data: {
-    labels: ['2022','2023','2024'],
-    datasets: [
-      { label: 'Aprovação (%)',  data: [87.6, 88.3, 88.7], borderColor: '#1e6e38', borderWidth: 2, pointRadius: 5, tension: 0.3, fill: false, yAxisID: 'yA' },
-      { label: 'Reprovação (%)', data: [7.2,  6.9,  6.63], borderColor: '#EF9F27', borderWidth: 2, pointRadius: 5, tension: 0.3, fill: false, yAxisID: 'yB' },
-      { label: 'Abandono (%)',   data: [5.2,  4.84, 4.66], borderColor: '#b52222', borderWidth: 2, pointRadius: 5, tension: 0.3, fill: false, yAxisID: 'yB' }
-    ]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: true, labels: { font: { size: 11 }, color: T, boxWidth: 12, padding: 10 } } },
-    scales: {
-      x: BASE.scales.x,
-      yA: { type: 'linear', position: 'left',  min: 85, max: 92, ticks: { color: T, font: { size: 10 }, callback: v => v.toFixed(1)+'%' }, grid: { color: G } },
-      yB: { type: 'linear', position: 'right', min: 0,  max: 10, ticks: { color: T, font: { size: 10 }, callback: v => v.toFixed(1)+'%' }, grid: { drawOnChartArea: false } }
-    }
-  }
-});
+Plotly.newPlot('cAbEvo', [
+  { type:'scatter', mode:'lines+markers', name:'Norte',        x:ANOS, y:[8.3,7.9,7.6], line:{color:'#E24B4A',width:2}, marker:{size:6} },
+  { type:'scatter', mode:'lines+markers', name:'Nordeste',     x:ANOS, y:[7.0,6.6,6.4], line:{color:'#EF9F27',width:2}, marker:{size:6} },
+  { type:'scatter', mode:'lines+markers', name:'Centro-Oeste', x:ANOS, y:[4.5,4.1,3.9], line:{color:'#85B7EB',width:2}, marker:{size:6} },
+  { type:'scatter', mode:'lines+markers', name:'Sudeste',      x:ANOS, y:[3.3,3.0,2.9], line:{color:'#378ADD',width:2}, marker:{size:6} },
+  { type:'scatter', mode:'lines+markers', name:'Sul',          x:ANOS, y:[2.9,2.6,2.5], line:{color:'#1D9E75',width:2}, marker:{size:6} }
+], {
+  ...LAYOUT_BASE,
+  yaxis: { gridcolor: '#e8e8e4', range: [0,10], title: { text: 'Abandono (%)', font: { size: 10 } } },
+  legend: { orientation: 'h', y: -0.22, font: { size: 10 } },
+  showlegend: true
+}, CFG);
+
+Plotly.newPlot('cAbNordSul', [
+  { type:'bar', name:'Norte', x:ANOS, y:[8.3,7.9,7.6], marker:{color:'#E24B4A'}, text:['8,3%','7,9%','7,6%'], textposition:'outside' },
+  { type:'bar', name:'Sul',   x:ANOS, y:[2.9,2.6,2.5], marker:{color:'#1D9E75'}, text:['2,9%','2,6%','2,5%'], textposition:'outside' }
+], {
+  ...LAYOUT_BASE,
+  barmode: 'group',
+  yaxis: { gridcolor: '#e8e8e4', range: [0,11], title: { text: 'Abandono (%)', font: { size: 10 } } },
+  legend: { orientation: 'h', y: -0.18, font: { size: 10 } },
+  showlegend: true
+}, CFG);
+
+// ── RENDIMENTO ────────────────────────────────────────────────
+Plotly.newPlot('cAprovReg', [{
+  type: 'bar',
+  x: REGIOES,
+  y: [84.7, 86.2, 89.5, 91.1, 91.8],
+  marker: { color: ['#E24B4A','#EF9F27','#85B7EB','#378ADD','#1D9E75'], cornerradius: 4 },
+  text: ['84,7%','86,2%','89,5%','91,1%','91,8%'],
+  textposition: 'outside',
+  hovertemplate: '<b>%{x}</b><br>Aprovação: %{y}%<extra></extra>'
+}], {
+  ...LAYOUT_BASE,
+  yaxis: { gridcolor: '#e8e8e4', range: [78, 95], title: { text: 'Aprovação (%)', font: { size: 10 } } }
+}, CFG);
+
+Plotly.newPlot('cCompleto', [
+  { type:'bar', name:'Aprovação',  x:REGIOES, y:[84.7,86.2,89.5,91.1,91.8], marker:{color:'#1e6e38'} },
+  { type:'bar', name:'Reprovação', x:REGIOES, y:[7.7,7.4,6.6,6.0,5.7],      marker:{color:'#EF9F27'} },
+  { type:'bar', name:'Abandono',   x:REGIOES, y:[7.6,6.4,3.9,2.9,2.5],      marker:{color:'#b52222'} }
+], {
+  ...LAYOUT_BASE,
+  barmode: 'stack',
+  yaxis: { gridcolor: '#e8e8e4', range: [0,102], title: { text: '%', font: { size: 10 } } },
+  legend: { orientation: 'h', y: -0.22, font: { size: 10 } },
+  showlegend: true
+}, CFG);
+
+Plotly.newPlot('cEvoNac', [
+  { type:'scatter', mode:'lines+markers', name:'Aprovação (%)',  x:ANOS, y:[87.6,88.3,88.7], line:{color:'#1e6e38',width:2.5}, marker:{size:7}, yaxis:'y' },
+  { type:'scatter', mode:'lines+markers', name:'Reprovação (%)', x:ANOS, y:[7.2,6.9,6.63],   line:{color:'#EF9F27',width:2.5}, marker:{size:7}, yaxis:'y2' },
+  { type:'scatter', mode:'lines+markers', name:'Abandono (%)',   x:ANOS, y:[5.2,4.84,4.66],  line:{color:'#b52222',width:2.5}, marker:{size:7}, yaxis:'y2' }
+], {
+  ...LAYOUT_BASE,
+  margin: { t: 10, b: 60, l: 55, r: 55 },
+  yaxis:  { gridcolor: '#e8e8e4', range: [85,92],  title: { text: 'Aprovação (%)', font: { size: 10 } } },
+  yaxis2: { overlaying: 'y', side: 'right', range: [0,10], title: { text: 'Reprov./Abandono (%)', font: { size: 10 } }, gridcolor: 'rgba(0,0,0,0)' },
+  legend: { orientation: 'h', y: -0.25, font: { size: 10 } },
+  showlegend: true
+}, CFG);
 </script>
-
 </body>
 </html>
